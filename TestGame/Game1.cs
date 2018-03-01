@@ -11,6 +11,7 @@ namespace TestGame
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+		private SpriteFont font;
         
         public Game1()
         {
@@ -39,6 +40,7 @@ namespace TestGame
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+			font = Content.Load<SpriteFont>("ayy");
 
             // TODO: use this.Content to load your game content here
         }
@@ -76,6 +78,11 @@ namespace TestGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+			spriteBatch.Begin();
+
+			spriteBatch.DrawString(font, "ayy lmao", new Vector2(100, 100), Color.Black);
+
+			spriteBatch.End();
 
             base.Draw(gameTime);
         }
